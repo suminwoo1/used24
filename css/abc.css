@@ -1,0 +1,114 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: #0D1117;
+    justify-content: center;
+    border-radius: 5px
+  }
+  
+  .value {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    color: white;
+    display: flex;
+    position: relative;
+    gap: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .value:not(:active):hover,
+  .value:focus {
+    background-color: #21262C;
+  }
+  
+  .value:focus,
+  .value:active {
+    background-color: #1A1F24;
+    outline: none;
+  }
+  
+  .value::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    width: 5px;
+    height: 80%;
+    background-color: #2F81F7;
+    border-radius: 5px;
+    opacity: 0;
+  }
+  
+  .value:focus::before,
+  .value:active::before {
+    opacity: 1;
+  }
+  
+  .value svg {
+    width: 15px
+  }
+
+  button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #183153;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: none;
+   }
+   
+   button:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: #FFD401;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+   }
+   
+   button:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+   }
+   
+   button span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 18px 25px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+   }
+   
+   button:hover span {
+    color: #183153;
+    animation: scaleUp 0.3s ease-in-out;
+   }
+   
+   @keyframes scaleUp {
+    0% {
+     transform: scale(1);
+    }
+   
+    50% {
+     transform: scale(0.95);
+    }
+   
+    100% {
+     transform: scale(1);
+    }
+   }
+   
